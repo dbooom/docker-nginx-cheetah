@@ -1,11 +1,11 @@
-# NGINX configuration from templates - Docker image
+# Generate NGINX configuration from templates - Docker image
 
-Create NGINX configuration with Cheetah templates and environment variables.
+Create NGINX configuration with Jinja2 templates and environment variables.
 
-This image is meant to be used as a part of a specific Docker Compose project.
+This image is meant to be used as a part of specific Docker Compose project.
 For more information about how to run this image go to the [project repo](https://github.com/dbooom/docker-compose-wp).
 
-Based on the [official nginx:latest docker image](https://hub.docker.com/_/nginx/)
+Based on the [official nginx:alpine docker image](https://hub.docker.com/_/nginx/)
 
 ## Environment variables
 | Variable Name             | Description         |
