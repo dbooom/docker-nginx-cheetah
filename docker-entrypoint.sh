@@ -27,12 +27,19 @@ if [[ ! -e $DWC_NGINX_ROOT ]] ; then
 fi
 
 
-# Start nginx configuration
+# Generate nginx configuration from templates
 # -----------------------------------------------------------------------------
 mkdir -p /etc/nginx/sites-enabled
 
-cheetah f --env --stdout /etc/nginx/templates/nginx.tmpl > /etc/nginx/nginx.conf
-cheetah f --env --stdout /etc/nginx/templates/default.tmpl > /etc/nginx/sites-enabled/default.conf
+# Base NGINX configuration file
+j2 /etc/nginx/templates/nginx.j2 > /etc/nginx/nginx.conf
+
+# Virtual hosts
+for file in /etc/nginx/templates/sites-enabled/* ; do
+    filename=$(basename "$file")
+    output_filename="${filename%.*}.conf"
+    j2 "$file" > "/etc/nginx/sites-enabled/$output_filename"
+done
 
 
 # Test nginx configuration
