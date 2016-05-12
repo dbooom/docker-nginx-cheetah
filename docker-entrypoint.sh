@@ -7,8 +7,6 @@ required_vars=(\
     DWC_NGINX_DOMAIN \
     DWC_NGINX_ROOT \
     DWC_NGINX_PORT \
-    DWC_NGINX_PHP_HOST_NAME \
-    DWC_NGINX_PHP_HOST_PORT \
 )
 
 for var in "${required_vars[@]}" ; do
@@ -18,6 +16,10 @@ for var in "${required_vars[@]}" ; do
     fi
 done
 
+# Setup optional variables with default values
+# -----------------------------------------------------------------------------
+export DWC_NGINX_PHP_HOST_NAME=${DWC_NGINX_PHP_HOST_NAME:=php}
+export DWC_NGINX_PHP_HOST_PORT=${DWC_NGINX_PHP_HOST_PORT:=9000}
 
 # Prepare documents root directory.
 # -----------------------------------------------------------------------------
