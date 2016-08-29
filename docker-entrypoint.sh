@@ -18,7 +18,6 @@ done
 
 # Setup optional variables with default values
 # -----------------------------------------------------------------------------
-export DWC_NGINX_PHP_HOST_NAME=${DWC_NGINX_PHP_HOST_NAME:=php}
 export DWC_NGINX_PHP_HOST_PORT=${DWC_NGINX_PHP_HOST_PORT:=9000}
 
 # Prepare documents root directory.

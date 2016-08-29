@@ -19,5 +19,4 @@ Based on the [official nginx:alpine docker image](https://hub.docker.com/_/nginx
 ### Optional variables:
 | Variable Name               | Description         | Default value            |
 | ---                         | ---                 | ---                      |
-| `DWC_NGINX_PHP_HOST_NAME` | Name of the container name wich runs PHP-FPM process | `php` |
 | `DWC_NGINX_PHP_HOST_PORT` | Port number of PHP-FPM process from PHP container | `9000` |

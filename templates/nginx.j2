@@ -80,12 +80,18 @@ http {
     # Generated from template php upstream
     # ===========================================
     upstream php {
-       server {{DWC_NGINX_PHP_HOST_NAME}}:{{DWC_NGINX_PHP_HOST_PORT}};
+       server php:{{DWC_NGINX_PHP_HOST_PORT}};
     }
 
     # ===========================================
     # Hosts related configs
     # ===========================================
     include /etc/nginx/sites-enabled/*.conf;
+
+    server {
+        listen 80 default_server;
+        server_name _;
+        return 444;
+    }
 }
 
